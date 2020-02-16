@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- 10
+before_deploy: yarn build
+deploy:
+  edge: true
+  provider: npm
+  skip_cleanup: true
+  email: cemyderin@gmail.com
+  api_key:
+    secure: pxjk8PvrboQ8qdve0uYtWocXLJXrwKteijztHWwltdcvNcakscLulV2QwHJuaGJ2SwOuh5pEAWGTT3QNJwPEuRyBvJM+hzO6S6crzlSW4iPz/GKeGzTSp5yaNBrCTO9eAqkNRtZs9rT/Vk1p5G+tCRcrVbNs4rw4gBcIw7lgwKBS8YnGJ5fpgY41nY6PsqUOVeAIxsOzN8kQu5vZE5a5sQ5tHiAXWjGabogJFObHzIw8qUU1kRlxVgCfMalwuzzjDQAYi+jm1sJCGcwOESu90t8o/9yN57P2HqOmQoGeZnxmj+9KqCoku3rXlM4GXmHgKe1+CQ/iL2Hk80ZTXN4qn0lF207Kabfe1vZz6myS+45kVulIG8bdyI2Sstklck/MJ1QRmIJypg2Qi8Wj+cGQzUAnUJdREgYBY45PR0mS7aoRfigi2J7YN7wFjnb2QGlsLbfuYuulK+RI17HyJHei3dCZ2lLSbND3gatswVvWPKqPbw7LY+d3+lzHzBYWdjUkWmJrfyWsJNzALgtNpsXRcrB44kV9tqGOZD5VTs5bdx6BYxLQuSKOipTRlWZmBRG+Z6XWq3Sgj8mJ+ctyZ81yMCyXpgR43FaVgcr9sMJNdsf42HGhGqZ4uduPhHy4hXjolZNXxFHxsmyXdw5x7zx3HlCub7SeG8I+UfjwC4+2cz8=
+  on:
+    repo: cemderin/react-data-editor
+    branch: master
