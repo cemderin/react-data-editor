@@ -36,21 +36,19 @@
     "@types/jest": "^25.1.2",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
+    "@types/capitalize": "^1.0.1",
     "husky": "^4.2.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "tsdx": "^0.12.3",
     "tslib": "^1.10.0",
-    "typescript": "^3.7.5"
+    "typescript": "^3.7.5",
+    "git-cz": "^4.3.1",
+    "standard-version": "^7.1.0"
   },
   "dependencies": {
     "@emotion/core": "^10.0.27",
-    "@emotion/styled": "^10.0.27",
-    "@types/capitalize": "^1.0.1",
-    "capitalize": "^2.0.2",
-    "git-cz": "^4.3.1",
-    "standard-version": "^7.1.0",
-    "styled-components": "^5.0.1"
+    "@emotion/styled": "^10.0.27"
   },
   "private": false,
   "publishConfig": {
