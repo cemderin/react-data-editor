@@ -17,6 +17,10 @@ let model = [
   { key: "name", label: "Name" }
 ];
 
+const Button: React.FC = (props: any) => {
+  return <button {...props} />
+}
+
 const App = () => {
   const [theData, setTheData] = React.useState(data);
   const [editRecordIndex, setEditRecordIndex] = React.useState(null);
@@ -33,7 +37,7 @@ const App = () => {
 
         editCallback={(recordIndex: number) => {
           setEditRecordIndex(recordIndex);
-        }}
+        }}  
 
         addCallback={() => {
           setEditRecordIndex(null);
@@ -71,6 +75,8 @@ const App = () => {
           setEditRecordIndex(null);
           setAddNewRecord(false);
         }}
+
+        buttonComponent={Button}
       />
     </div>
   );

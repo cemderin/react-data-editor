@@ -22,6 +22,8 @@ type DataEditorProps = {
   saveCallback?: Function;
 
   deleteCallback?: Function;
+
+  buttonComponent?: React.FC | React.Component | null;
 };
 
 const generateEmptyRecordFromModel = (model: Array<DataEditorModelField>) => {
@@ -32,7 +34,16 @@ const generateEmptyRecordFromModel = (model: Array<DataEditorModelField>) => {
   return emptyRecord;
 };
 
+const Button: React.FC = (props: any) => {
+  return <button {...props} />;
+};
+
 const DataEditor: React.FC<DataEditorProps> = (props: any) => {
+  const ButtonComponent: React.FC<any> = (addProps: any) => {
+    if (props.buttonComponent) return <props.buttonComponent {...addProps} />;
+    return <Button {...addProps} />;
+  };
+
   // add new
   if (props.addNewRecord)
     return (
@@ -62,13 +73,13 @@ const DataEditor: React.FC<DataEditorProps> = (props: any) => {
   // default: list
   return (
     <section>
-      <button
+      <ButtonComponent
         onClick={() => {
           if (props.addCallback) props.addCallback();
         }}
       >
         Add Item
-      </button>
+      </ButtonComponent>
 
       <DataEditorList {...props} />
     </section>
