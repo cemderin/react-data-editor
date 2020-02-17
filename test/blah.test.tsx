@@ -5,7 +5,7 @@ import DataEditor from '../src';
 describe('it', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<DataEditor data={[]} />, div);
+    ReactDOM.render(<DataEditor data={[]} model={[]} />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 });
