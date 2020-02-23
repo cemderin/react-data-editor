@@ -1,6 +1,6 @@
 # react-data-editor
 
-## Installatiom
+## Installation
 ```bash
 # npm
 npm install @cemderin/react-data-editor
