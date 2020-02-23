@@ -18,7 +18,7 @@ let model = [
 ];
 
 const Button: React.FC = (props: any) => {
-  return <button {...props} />
+return <button {...props}>{props.children}</button>
 }
 
 const App = () => {

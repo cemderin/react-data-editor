@@ -6,10 +6,17 @@ type DataEditorMaskProps = {
   model: Array<DataEditorModelField>;
   saveCallback?: Function;
   cancelCallback?: Function;
+  buttonComponent: React.FC;
 };
 
 const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
   const [workingCopy, setWorkingCopy] = useState(props.record);
+  const ButtonComponent: React.FC<any> = props.buttonComponent;
+
+  console.group('Edit record with model');
+  console.log('Record', props.record);
+  console.log('Model', props.model);
+  console.groupEnd();
 
   return (
     <form
@@ -36,14 +43,14 @@ const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
         );
       })}
 
-      <button
+      <ButtonComponent
         onClick={() => {
           if (props.cancelCallback) props.cancelCallback();
         }}
       >
         cancel
-      </button>
-      <button type="submit">save</button>
+      </ButtonComponent>
+      <ButtonComponent type="submit">save</ButtonComponent>
     </form>
   );
 };

@@ -54,6 +54,7 @@ const DataEditor: React.FC<DataEditorProps> = (props: any) => {
         saveCallback={(record: object) => {
           props.saveCallback(record, null);
         }}
+        buttonComponent={ButtonComponent}
       />
     );
 
@@ -67,6 +68,7 @@ const DataEditor: React.FC<DataEditorProps> = (props: any) => {
         saveCallback={(record: object) => {
           props.saveCallback(record, props.editRecordIndex);
         }}
+        buttonComponent={ButtonComponent}
       />
     );
 
@@ -81,7 +83,7 @@ const DataEditor: React.FC<DataEditorProps> = (props: any) => {
         Add Item
       </ButtonComponent>
 
-      <DataEditorList {...props} />
+      <DataEditorList {...props} buttonComponent={ButtonComponent} />
     </section>
   );
 };
