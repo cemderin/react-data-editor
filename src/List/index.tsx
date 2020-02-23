@@ -55,7 +55,11 @@ const DataEditorList: React.FC = (props: any) => {
                 <ButtonComponent
                   onClick={(e: any) => {
                     e.preventDefault();
-                    if (props.deleteCallback) props.deleteCallback(recordIndex);
+                    if (
+                      props.deleteCallback &&
+                      window.confirm('Do you want to delete this record?')
+                    )
+                      props.deleteCallback(recordIndex);
                   }}
                 >
                   Delete
