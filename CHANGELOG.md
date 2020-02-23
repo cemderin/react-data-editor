@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.1.0](https://github.com/cemderin/react-data-editor/compare/v0.0.7...v0.1.0) (2020-02-23)
+
+
+### ⚠ BREAKING CHANGES
+
+* 🧨 A model field type is now mandatory
+
+### Features
+
+* 🎸 Add nested lists ([166b11f](https://github.com/cemderin/react-data-editor/commit/166b11fe5ded238efa7e6b6f078085d246c45a40))
+
 ### [0.0.7](https://github.com/cemderin/react-data-editor/compare/v0.0.6...v0.0.7) (2020-02-23)
 
 
