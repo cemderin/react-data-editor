@@ -112,6 +112,7 @@ const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
                     newInnerEditors[index].editRecordIndex = null;
                     setInnerEditors(newInnerEditors);
                   }}
+                  buttonComponent={ButtonComponent}
                 />
               </div>
             )}
