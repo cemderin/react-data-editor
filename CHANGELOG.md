@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/cemderin/react-data-editor/compare/v0.1.0...v0.1.1) (2020-02-23)
+
+
+### Bug Fixes
+
+* 🐛 Display not defined children lists as empty ([f74e26f](https://github.com/cemderin/react-data-editor/commit/f74e26fff4341b38acc59d8971c1300f547680a0))
+
 ## [0.1.0](https://github.com/cemderin/react-data-editor/compare/v0.0.7...v0.1.0) (2020-02-23)
 
 
