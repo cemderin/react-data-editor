@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/cemderin/react-data-editor/compare/v0.0.5...v0.0.6) (2020-02-23)
+
+
+### Features
+
+* 🎸 Add debug log in mask component ([f25a16c](https://github.com/cemderin/react-data-editor/commit/f25a16c664cc7f1e25e54eafdbede64691b82d11))
+
+
+### Bug Fixes
+
+* 🐛 Set custom Button Component in all screens ([31905e0](https://github.com/cemderin/react-data-editor/commit/31905e06274e2e2c697684a610472740883f87ca))
+
 ### [0.0.5](https://github.com/cemderin/react-data-editor/compare/v0.0.4...v0.0.5) (2020-02-17)
 
 
