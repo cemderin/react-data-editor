@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/cemderin/react-data-editor/compare/v0.0.6...v0.0.7) (2020-02-23)
+
+
+### Features
+
+* 🎸 Add debug log to main element ([cee65e2](https://github.com/cemderin/react-data-editor/commit/cee65e2883b9e22dd7f2197ba18dea857e35eefc))
+
 ### [0.0.6](https://github.com/cemderin/react-data-editor/compare/v0.0.5...v0.0.6) (2020-02-23)
 
 
