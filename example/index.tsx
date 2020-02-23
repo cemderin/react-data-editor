@@ -1,20 +1,16 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import DataEditor from '../.';
+import DataEditor, { DataEditorModelFieldType } from '../.';
 
 let data = [
-  { id: 1, title: "Name #1", children: [{ test: "lol" }] },
-  { id: 2, title: "Name #2" },
-  { id: 3, title: "Name #3" },
-  { id: 4, title: "Name #4" },
-  { id: 5, title: "Name #5" },
-  { id: 6, title: "Name #6" }
+  { id: 1, title: "Name #1", children: [{ test: "lol" }, { test: "lol2" }] },
 ]
 
 let model = [
-  { key: "title", label: "Title" },
-  { key: "name", label: "Name" }
+  { key: "title", label: "Title", type: DataEditorModelFieldType.String },
+  { key: "name", label: "Name", type: DataEditorModelFieldType.String },
+  { key: "children", label: "Children", type: DataEditorModelFieldType.Array, model: [{key: "test", type: DataEditorModelFieldType.String}]}
 ];
 
 const Button: React.FC = (props: any) => {
