@@ -59,7 +59,13 @@ const DataEditor: React.FC<DataEditorProps> = (props: any) => {
     );
 
   // edit record
-  if (props.editRecordIndex !== null)
+  if (props.editRecordIndex !== null) {
+    console.group('Init record with index from data');
+    console.log('Record', props.data[props.editRecordIndex]);
+    console.log('Index', props.editRecordIndex);
+    console.log('Data', props.data);
+    console.groupEnd();
+
     return (
       <DataEditorMask
         record={props.data[props.editRecordIndex]}
@@ -71,6 +77,7 @@ const DataEditor: React.FC<DataEditorProps> = (props: any) => {
         buttonComponent={ButtonComponent}
       />
     );
+  }
 
   // default: list
   return (
