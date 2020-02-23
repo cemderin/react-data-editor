@@ -93,7 +93,9 @@ const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
                     setWorkingCopy(wc);
                   }}
                   saveCallback={(saveItem: any, saveIndex: number) => {
-                    const newData = [...fieldValue];
+                    const newData = Array.isArray(fieldValue)
+                      ? [...fieldValue]
+                      : [];
                     if (saveIndex === null) {
                       newData.push(saveItem);
                     } else {

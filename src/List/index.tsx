@@ -33,7 +33,10 @@ const DataEditorList: React.FC = (props: any) => {
                         displayValue) ||
                         (modelField.type === DataEditorModelFieldType.Array && (
                           <React.Fragment>
-                            {displayValue.length} Items
+                            {(Array.isArray(displayValue) &&
+                              displayValue.length) ||
+                              0}{' '}
+                            Items
                           </React.Fragment>
                         ))}
                     </td>

@@ -5,6 +5,7 @@ import DataEditor, { DataEditorModelFieldType } from '../.';
 
 let data = [
   { id: 1, title: "Name #1", children: [{ test: "lol" }, { test: "lol2" }] },
+  { id: 1, title: "Name #1" },
 ]
 
 let model = [
