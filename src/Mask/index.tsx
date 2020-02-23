@@ -6,11 +6,17 @@ type DataEditorMaskProps = {
   model: Array<DataEditorModelField>;
   saveCallback?: Function;
   cancelCallback?: Function;
-  buttonComponent: React.FC
+  buttonComponent: React.FC;
 };
 
 const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
   const [workingCopy, setWorkingCopy] = useState(props.record);
+  const ButtonComponent: React.FC<any> = props.buttonComponent;
+
+  console.group('Edit record with model');
+  console.log('Record', props.record);
+  console.log('Model', props.model);
+  console.groupEnd();
 
   return (
     <form
