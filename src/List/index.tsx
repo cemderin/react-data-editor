@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataEditorModelField } from '../index';
+import { DataEditorModelField, DataEditorModelFieldType } from '../index';
 
 const DataEditorList: React.FC = (props: any) => {
   const ButtonComponent: React.FC<any> = props.buttonComponent;
@@ -26,19 +26,32 @@ const DataEditorList: React.FC = (props: any) => {
             <tr key={recordIndex}>
               {props.model.map(
                 (modelField: DataEditorModelField, modelIndex: number) => {
-                  return <td key={modelIndex}>{record[modelField.key]}</td>;
+                  const displayValue = record[modelField.key];
+                  return (
+                    <td key={modelIndex}>
+                      {(modelField.type === DataEditorModelFieldType.String &&
+                        displayValue) ||
+                        (modelField.type === DataEditorModelFieldType.Array && (
+                          <React.Fragment>
+                            {displayValue.length} Items
+                          </React.Fragment>
+                        ))}
+                    </td>
+                  );
                 }
               )}
               <td>
                 <ButtonComponent
-                  onClick={() => {
+                  onClick={(e: any) => {
+                    e.preventDefault();
                     if (props.editCallback) props.editCallback(recordIndex);
                   }}
                 >
                   Edit
                 </ButtonComponent>
                 <ButtonComponent
-                  onClick={() => {
+                  onClick={(e: any) => {
+                    e.preventDefault();
                     if (props.deleteCallback) props.deleteCallback(recordIndex);
                   }}
                 >

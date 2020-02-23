@@ -2,9 +2,16 @@ import React from 'react';
 import DataEditorList from './List/index';
 import DataEditorMask from './Mask/index';
 
+enum DataEditorModelFieldType {
+  String,
+  Array,
+}
+
 type DataEditorModelField = {
   key: string;
   label?: string;
+  type: DataEditorModelFieldType;
+  model?: Array<DataEditorModelField>;
 };
 
 type DataEditorProps = {
@@ -60,12 +67,6 @@ const DataEditor: React.FC<DataEditorProps> = (props: any) => {
 
   // edit record
   if (props.editRecordIndex !== null) {
-    console.group('Init record with index from data');
-    console.log('Record', props.data[props.editRecordIndex]);
-    console.log('Index', props.editRecordIndex);
-    console.log('Data', props.data);
-    console.groupEnd();
-
     return (
       <DataEditorMask
         record={props.data[props.editRecordIndex]}
@@ -83,7 +84,8 @@ const DataEditor: React.FC<DataEditorProps> = (props: any) => {
   return (
     <section>
       <ButtonComponent
-        onClick={() => {
+        onClick={(e: any) => {
+          e.preventDefault();
           if (props.addCallback) props.addCallback();
         }}
       >
@@ -100,4 +102,8 @@ DataEditor.defaultProps = {
   addNewRecord: false,
 };
 
-export { DataEditor as default, DataEditorModelField };
+export {
+  DataEditor as default,
+  DataEditorModelField,
+  DataEditorModelFieldType,
+};
