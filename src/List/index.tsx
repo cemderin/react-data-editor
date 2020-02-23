@@ -2,6 +2,8 @@ import React from 'react';
 import { DataEditorModelField } from '../index';
 
 const DataEditorList: React.FC = (props: any) => {
+  const ButtonComponent: React.FC<any> = props.buttonComponent;
+
   return (
     <table>
       <thead>
@@ -28,20 +30,20 @@ const DataEditorList: React.FC = (props: any) => {
                 }
               )}
               <td>
-                <button
+                <ButtonComponent
                   onClick={() => {
                     if (props.editCallback) props.editCallback(recordIndex);
                   }}
                 >
                   Edit
-                </button>
-                <button
+                </ButtonComponent>
+                <ButtonComponent
                   onClick={() => {
                     if (props.deleteCallback) props.deleteCallback(recordIndex);
                   }}
                 >
                   Delete
-                </button>
+                </ButtonComponent>
               </td>
             </tr>
           );

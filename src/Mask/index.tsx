@@ -6,6 +6,7 @@ type DataEditorMaskProps = {
   model: Array<DataEditorModelField>;
   saveCallback?: Function;
   cancelCallback?: Function;
+  buttonComponent: React.FC
 };
 
 const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
@@ -36,14 +37,14 @@ const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
         );
       })}
 
-      <button
+      <ButtonComponent
         onClick={() => {
           if (props.cancelCallback) props.cancelCallback();
         }}
       >
         cancel
-      </button>
-      <button type="submit">save</button>
+      </ButtonComponent>
+      <ButtonComponent type="submit">save</ButtonComponent>
     </form>
   );
 };
