@@ -4,14 +4,18 @@ import * as ReactDOM from 'react-dom';
 import DataEditor, { DataEditorModelFieldType } from '../.';
 
 let data = [
-  { id: 1, title: "Name #1", children: [{ test: "lol" }, { test: "lol2" }] },
+  { id: 1, title: "Name #1", children: [{ test: "lol" }, { test: "lol2" }], thing: {name: "thingname", color: "red"}},
   { id: 1, title: "Name #1" },
 ]
 
 let model = [
   { key: "title", label: "Title", type: DataEditorModelFieldType.String },
   { key: "name", label: "Name", type: DataEditorModelFieldType.String },
-  { key: "children", label: "Children", type: DataEditorModelFieldType.Array, model: [{key: "test", type: DataEditorModelFieldType.String}]}
+  { key: "children", label: "Children", type: DataEditorModelFieldType.Array, model: [{key: "test", type: DataEditorModelFieldType.String}]},
+  { key: "thing", type: DataEditorModelFieldType.Object, model: [
+    {key: "name", type: DataEditorModelFieldType.String},
+    {key: "color", type: DataEditorModelFieldType.String}
+  ] }
 ];
 
 const Button: React.FC = (props: any) => {
@@ -47,6 +51,7 @@ const App = () => {
         }}
 
         saveCallback={(record: any, index: number | null) => {
+          console.log('outer save called');
           const wc = [...theData];
 
           if (index === null) {

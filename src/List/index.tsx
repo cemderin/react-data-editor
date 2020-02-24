@@ -29,8 +29,32 @@ const DataEditorList: React.FC = (props: any) => {
                   const displayValue = record[modelField.key];
                   return (
                     <td key={modelIndex}>
-                      {(modelField.type === DataEditorModelFieldType.String &&
-                        displayValue) ||
+                      {(modelField.type === DataEditorModelFieldType.Object && (
+                        <dl>
+                          {modelField.model?.map(
+                            (
+                              childModelField: DataEditorModelField,
+                              childIndex: number
+                            ) => {
+                              return (
+                                <React.Fragment key={childIndex}>
+                                  <dt>
+                                    {childModelField.label
+                                      ? childModelField.label
+                                      : childModelField.key}
+                                  </dt>
+                                  <dd>
+                                    {displayValue &&
+                                      displayValue[childModelField.key]}
+                                  </dd>
+                                </React.Fragment>
+                              );
+                            }
+                          )}
+                        </dl>
+                      )) ||
+                        (modelField.type === DataEditorModelFieldType.String &&
+                          displayValue) ||
                         (modelField.type === DataEditorModelFieldType.Array && (
                           <React.Fragment>
                             {(Array.isArray(displayValue) &&

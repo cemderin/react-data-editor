@@ -5,6 +5,7 @@ import DataEditorMask from './Mask/index';
 enum DataEditorModelFieldType {
   String,
   Array,
+  Object,
 }
 
 type DataEditorModelField = {
