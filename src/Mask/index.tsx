@@ -30,6 +30,53 @@ const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
         return (
           <div key={index}>
             {modelField.label ? modelField.label : modelField.key}
+
+            {modelField.type === DataEditorModelFieldType.Object && (
+              <dl>
+                {modelField.model?.map(
+                  (
+                    childModelField: DataEditorModelField,
+                    childModelIndex: number
+                  ) => {
+                    const childFieldValue = fieldValue
+                      ? fieldValue[childModelField.key]
+                      : null;
+
+                    return (
+                      <React.Fragment key={childModelIndex}>
+                        <dt>
+                          {childModelField.label
+                            ? childModelField.label
+                            : childModelField.key}
+                        </dt>
+                        <dd>
+                          {childModelField.type ===
+                            DataEditorModelFieldType.String && (
+                            <input
+                              type="text"
+                              defaultValue={childFieldValue || null}
+                              onChange={(e: any) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                const nValue = e.target.value;
+                                const wc = { ...workingCopy };
+                                if (!wc[modelField.key])
+                                  wc[modelField.key] = {};
+                                wc[modelField.key][
+                                  childModelField.key
+                                ] = nValue;
+                                setWorkingCopy(wc);
+                              }}
+                            />
+                          )}
+                        </dd>
+                      </React.Fragment>
+                    );
+                  }
+                )}
+              </dl>
+            )}
+
             {modelField.type === DataEditorModelFieldType.String && (
               <input
                 type="text"
@@ -112,6 +159,7 @@ const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
                     newInnerEditors[index].editRecordIndex = null;
                     setInnerEditors(newInnerEditors);
                   }}
+                  buttonComponent={ButtonComponent}
                 />
               </div>
             )}
@@ -122,6 +170,7 @@ const DataEditorMask: React.FC<DataEditorMaskProps> = (props: any) => {
       <ButtonComponent
         onClick={(e: any) => {
           e.preventDefault();
+          e.stopPropagation();
           if (props.cancelCallback) props.cancelCallback();
         }}
       >

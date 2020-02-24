@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/cemderin/react-data-editor/compare/v0.1.1...v0.1.2) (2020-02-24)
+
+
+### Features
+
+* 🎸 Add object field type ([1e88c02](https://github.com/cemderin/react-data-editor/commit/1e88c02f703b665d50e1d66b232dbce293116de5)), closes [#10](https://github.com/cemderin/react-data-editor/issues/10)
+
+
+### Bug Fixes
+
+* 🐛 Custom button component is now passed to nested lists ([d7f5e23](https://github.com/cemderin/react-data-editor/commit/d7f5e236f296e79c205018dc1cbb5bed98856c55)), closes [#9](https://github.com/cemderin/react-data-editor/issues/9)
+* 🐛 Delete callback asks user for confirmation ([df54266](https://github.com/cemderin/react-data-editor/commit/df542664011aa5ff43c55af37a1d5d03bed726b9)), closes [#11](https://github.com/cemderin/react-data-editor/issues/11)
+
 ### [0.1.1](https://github.com/cemderin/react-data-editor/compare/v0.1.0...v0.1.1) (2020-02-23)
 
 
